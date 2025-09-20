@@ -3,17 +3,17 @@ pipeline{
 	stages{
 		stage("cleaning"){
 			steps{
-				mvn clean
+				bat 'mvn clean'
 			}
 		}
 		stage("New Build"){
 			steps{
-				mvn install
+				bat 'mvn install'
 			}
 		}
 		stage("jar execution"){
 			steps{
-				java -jar target/MavenProject-v1.0.1.2.jar
+				bat 'java -jar target/MavenProject-v1.0.1.2.jar'
 			}
 		}
 	}
